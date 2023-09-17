@@ -29,7 +29,9 @@ function onImgClick(event) {
         return;
     }
 
-    const item = `<img width="1400" height="900" src="${event.target.dataset.source}" alt = "${event.target.alt}">`;
+    const item = `<img width="1400" height="900"
+    src="${event.target.dataset.source}" alt ="${event.target.alt}">`;
+    
     const instance = basicLightbox.create(item, {
         onShow: (instance) => {
             window.addEventListener('keydown', closeLightbox);
@@ -39,6 +41,7 @@ function onImgClick(event) {
         }
     });
     instance.show();
+    
     function closeLightbox(event) {
         if (event.code === 'Escape') {
             instance.close();
